@@ -2,8 +2,8 @@
 theme: default
 title: "Stagecraft"
 author: "Mumit Khan"
-date: "2026-06-02"
-confidentiality: "Public"
+date: "2026-06-18"
+confidentiality: "Proprietary"
 language: "en"
 aspectRatio: "16/9"
 canvasWidth: 980
@@ -24,8 +24,7 @@ transition: fade
 
 An AI dev pipeline. Multi-host, gate-enforced, on disk.
 
-<div class="presenter-info">Mumit Khan, AI Accelerator · June 2026 <br />
-github.com/telus-labs/stagecraft</div>
+<div class="presenter-info">Mumit Khan, AI Accelerator · June 2026</div>
 
 <style>
 h1 { color: #4B286D; font-size: 2.8em; margin-top: 120px; }
@@ -34,14 +33,13 @@ p { color: #676E73; }
 </style>
 
 <!--
-Open with the frustration — don't rush past it:
-"Most AI coding tools give you a chat log. You're three hours in. You don't have a brief, a design, or tests — just a transcript. Stagecraft asks: what happens if you run an AI coding tool through an actual software dev process instead?"
-
-Keep it short. The demo is more interesting than the intro.
+Open strong — don't rush past the frustration:
+"Most AI coding tools give you a chat log. You're three hours in — no brief, no design, no tests. Just a transcript. Stagecraft asks: what happens if you run an AI coding tool through an actual software dev process instead?"
+Keep it short. The rest of the talk earns the claim.
 -->
 
 ---
-src: ./slides/02-agenda.md
+src: ./slides/02-not-a-vibe-coder.md
 ---
 
 ---
@@ -49,39 +47,67 @@ src: ./slides/03-problem.md
 ---
 
 ---
-src: ./slides/04-before-after.md
+src: ./slides/04-agenda.md
 ---
 
 ---
-src: ./slides/05-gate-json.md
+src: ./slides/05-before-after.md
 ---
 
 ---
-src: ./slides/06-demo.md
+src: ./slides/06-pipeline.md
 ---
 
 ---
-src: ./slides/07-pipeline.md
+src: ./slides/07-tracks.md
 ---
 
 ---
-src: ./slides/08-control-moments.md
+src: ./slides/08-gate-json.md
 ---
 
 ---
-src: ./slides/09-multi-host.md
+src: ./slides/08b-artifacts.md
 ---
 
 ---
-src: ./slides/10-safety.md
+src: ./slides/09-autonomous-driver.md
 ---
 
 ---
-src: ./slides/11-fit.md
+src: ./slides/10-multi-host.md
 ---
 
 ---
-src: ./slides/12-getting-started.md
+src: ./slides/11-control-moments.md
+---
+
+---
+src: ./slides/12-safety.md
+---
+
+---
+src: ./slides/13-comparative.md
+---
+
+---
+src: ./slides/14-strengths.md
+---
+
+---
+src: ./slides/15-audit.md
+---
+
+---
+src: ./slides/15b-verify.md
+---
+
+---
+src: ./slides/16-getting-started.md
+---
+
+---
+src: ./slides/17-fit.md
 ---
 
 ---
@@ -94,57 +120,33 @@ transition: fade
 
 <div class="repo-link">github.com/telus-labs/stagecraft</div>
 
+<div class="cta-note">Two-week pilot guide: <code>docs/adoption-guide.md</code></div>
+
 <style>
 h1 { color: #4B286D; font-size: 3em; }
-.repo-link { color: #2B8000; font-size: 1em; margin-top: 0.8em; }
+.repo-link { color: #2B8000; font-size: 1.1em; margin-top: 0.8em; }
+.cta-note { color: #676E73; font-size: 0.85em; margin-top: 0.6em; font-family: 'Fira Code', monospace; }
 </style>
 
 <!--
 Q&A primers — have these ready:
 
 Q: How does this compare to LangGraph / CrewAI / AutoGen?
-A: Different problem. Those are Python libraries for coordinating LLM calls. Stagecraft is a pipeline scaffold for AI coding tools — model invocation happens inside Claude / Codex / Gemini, not via a framework SDK.
+A: Different problem. Those are Python libraries for coordinating LLM calls in your code. Stagecraft is a pipeline scaffold for AI *coding* tools — the model invocation happens inside Claude / Codex / Gemini, not via a framework SDK.
 
-Q: What if my LLM doesn't follow the rules?
-A: Hook-enforceable rules (allowedWrites, secret scanning) are enforced at tool-call time via Claude Code PreToolUse hooks. Gate validator catches the rest post-hoc. A FAIL gate halts the pipeline.
+Q: What if the LLM doesn't follow the rules?
+A: Hook-enforceable rules (allowedWrites, secret scanning) are enforced at tool-call time via Claude Code PreToolUse hooks. The gate validator catches the rest post-hoc. A FAIL gate halts the pipeline — there's no silently moving forward.
 
 Q: Cost — adversarial review sounds expensive.
-A: Default config is one host per pipeline. Fanout is opt-in. Route bulk work to cheaper models; reserve expensive ones for Principal and Security.
+A: Default config is one host per pipeline. Fanout is opt-in. Route bulk work to cheaper models (Codex for backend), reserve expensive ones for Principal/Security.
 
 Q: Can I add Cursor / Aider / Cline / Windsurf?
-A: Yes. ~200 lines. Implement 5 methods against the host-adapter contract. CONTRIBUTING.md has the recipe.
+A: Yes. ~200 lines — implement 5 methods against the host-adapter contract. CONTRIBUTING.md has the recipe.
 
 Q: Is "reproducible LLM run" actually a thing?
-A: Partially. Gates record model_version, temperature, seed, system_prompt_hash. Enough for an audit trail — not bit-for-bit reproduction. The docs are explicit about this.
+A: Partially. Gates record model_version, temperature, seed, system_prompt_hash — enough for audit, not bit-for-bit reproduction. The docs are explicit about the limit.
 -->
 
 ---
-layout: default
-transition: fade
+src: ./slides/18-backup.md
 ---
-
-# Backup: timing reference
-
-| Section | Slides | Time |
-|---|---|---|
-| Hook + problem | 1–3 | 4 min |
-| Before/after + gate JSON | 4–5 | 5 min |
-| Terminal demo | 6 | 11 min |
-| Pipeline + control | 7–8 | 4 min |
-| Multi-host · safety · fit | 9–11 | 5 min |
-| Getting started | 12 | 2 min |
-| **Total** | | **31 min** |
-
-<style>
-.slidev-layout { padding: 40px 60px 60px 60px; }
-h1 { color: #4B286D; margin-bottom: 0.6em; }
-table th { background: #4B286D; color: #FFFFFF; padding: 10px 16px; }
-table td { padding: 8px 16px; color: #2C2E30; }
-table tr:nth-child(even) { background: #FAFAFA; }
-table { width: 100%; border-collapse: collapse; }
-p, li { color: #2C2E30; line-height: 1.6; }
-</style>
-
-<!--
-Backup slide — not presented, for your reference.
--->
