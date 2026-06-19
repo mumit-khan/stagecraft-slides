@@ -1,0 +1,15 @@
+/* TELUS brand overrides for Slidev default theme */
+
+table {
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: none;
+}
+
+#slidev-goto-dialog {
+  display: none !important;
+}
+
