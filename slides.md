@@ -2,8 +2,8 @@
 theme: default
 title: "Stagecraft"
 author: "Mumit Khan"
-date: "2026-06-18"
-confidentiality: "Proprietary"
+date: "2026-06-19"
+confidentiality: "Public"
 language: "en"
 aspectRatio: "16/9"
 canvasWidth: 980
