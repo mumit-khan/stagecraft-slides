@@ -43,8 +43,8 @@ transition: slide-left
 </div>
 
 <div class="layer gate">
-  <div class="layer-title">Verification beyond tests</div>
-  <div class="layer-body">Property-based · mutation · formal: counterexamples block sign-off</div>
+  <div class="layer-title">Test verification</div>
+  <div class="layer-body">Node, pytest, and Go suites aggregated automatically. Property-based · mutation · formal: counterexamples block sign-off.</div>
 </div>
 
 <div class="layer gate">

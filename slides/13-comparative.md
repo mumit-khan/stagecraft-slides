@@ -25,11 +25,11 @@ transition: slide-left
       <td>✅ Per-role + per-stage routing</td>
     </tr>
     <tr>
-      <td>AI-DLC</td>
-      <td>Adaptive methodology</td>
-      <td>⚠ Evaluator + human approval</td>
-      <td>✅ Construction + operations phases</td>
-      <td>⚠ Rules for multiple agents</td>
+      <td>Copilot Workspace</td>
+      <td>Spec → plan → implement</td>
+      <td>❌ No gate enforcement</td>
+      <td>❌ Core ends at implementation</td>
+      <td>❌ GitHub Copilot only</td>
     </tr>
     <tr>
       <td>BMAD</td>
@@ -82,10 +82,11 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 "Stagecraft is the only one that combines: mechanical gate enforcement (not just checklists), heterogeneous multi-host routing, AND full post-build depth through deploy and retro."
 
 "Concrete differences:
+- vs Copilot Workspace: Workspace takes a task and generates a plan + implementation. Ends there. No review, no red team, no deploy — and gates are a checklist you tick, not a validator that blocks.
 - vs Spec Kit: Spec Kit ends at implementation. Stagecraft runs review, red team, QA, deploy.
 - vs BMAD: BMAD is stronger at conversational product shaping. Stagecraft wins on deterministic execution — you can't argue your way past a gate validator.
 - vs Kiro: Kiro is an integrated IDE environment. Stagecraft can compose with Kiro as a host.
-- vs AI-DLC: Closest comparator. Stagecraft is more executable locally; AI-DLC is broader as an organization-wide methodology."
+- vs Agent OS: Standards context only, no pipeline structure."
 
 "The highlighted row is us. Every ✅ is verifiable against the codebase — not marketing copy."
 -->

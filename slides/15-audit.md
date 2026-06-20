@@ -6,7 +6,7 @@ transition: fade
 <div class="stat-page">
 
 <div class="big-stat">
-  <div class="big-num">1,941</div>
+  <div class="big-num">2,056</div>
   <div class="big-label">runtime tests: gate validation, CLI commands, hook enforcement. Not assertions, not mocks.</div>
 </div>
 
@@ -16,7 +16,7 @@ transition: fade
     <div class="sub-label">ordered stages</div>
   </div>
   <div class="sub-stat">
-    <div class="sub-num">91</div>
+    <div class="sub-num">100</div>
     <div class="sub-label">test files</div>
   </div>
   <div class="sub-stat">
@@ -31,7 +31,7 @@ transition: fade
 
 <div class="chain-callout">
   <div class="chain-label">Tamper-evident audit trail</div>
-  <div class="chain-body">Every gate is SHA-256 chained to its predecessor. <code>devteam verify-chain</code> exits non-zero on any tampered link. CI-usable. No service required.</div>
+  <div class="chain-body">Every gate is SHA-256 chained to its predecessor. <code>devteam verify-chain</code> exits non-zero on any tampered link. CI-usable. No service required. Optional: set <code>DEVTEAM_SIGNING_SECRET</code> to authenticate each gate with HMAC-SHA256 — <code>--require-signed</code> makes unsigned history fail in CI.</div>
 </div>
 
 </div>
@@ -69,9 +69,11 @@ code { color: #4B286D; background: #F0EBF5; padding: 0.1em 0.4em; border-radius:
 </style>
 
 <!--
-Let the 1,941 land. Then clarify what "runtime tests" means — not unit assertions, but tests that actually invoke CLI commands, write gate files, fire hooks.
+Let the 2,056 land. Then clarify what "runtime tests" means — not unit assertions, but tests that actually invoke CLI commands, write gate files, fire hooks.
 
 "The SHA-256 chain is the bit most people don't expect. Every gate references its predecessor's hash. devteam verify-chain walks the full chain — one tampered file fails the whole audit. You can wire it into CI in two lines."
+
+"For teams with stricter compliance requirements: set DEVTEAM_SIGNING_SECRET and each gate gets an HMAC-SHA256 signature on top of the hash chain. --require-signed in CI means any unsigned gate fails the audit."
 
 Transition: Next slide — every one of these claims is something you can verify yourself in under five minutes.
 -->

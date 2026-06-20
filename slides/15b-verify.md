@@ -9,7 +9,7 @@ transition: fade
 
   <div class="verify-item">
     <div class="v-cmd"><code>npm test</code></div>
-    <div class="v-result">1,941 pass. Runtime tests: gate validation, CLI dispatch, hook enforcement. Not assertions.</div>
+    <div class="v-result">2,056 pass. Runtime tests: gate validation, CLI dispatch, hook enforcement. Not assertions.</div>
   </div>
 
   <div class="verify-item">

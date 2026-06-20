@@ -3,40 +3,53 @@ layout: default
 transition: fade
 ---
 
-# Backup: timing reference
+# Backup: timing · Q&A primers
 
-| Section | Slides | Time |
+<div class="backup-grid">
+
+<div class="backup-col">
+<div class="col-head">Timing reference</div>
+
+| Section | Slides | Min |
 |---|---|---|
-| Hook + not-a-vibe-coder + problem | 1–3 | 4 min |
-| Agenda + before/after | 4–5 | 3 min |
-| Pipeline + tracks | 6–7 | 5 min |
-| Gate JSON + autonomous driver + multi-host | 8–10 | 6 min |
-| Control moments + safety | 11–12 | 4 min |
-| Comparative + strengths + audit | 13–15 | 5 min |
-| Getting started + fit | 16–17 | 3 min |
-| **Total** | | **~30 min** |
+| Hook + framing + problem | 1–3 | 4 |
+| Agenda + before/after | 4–5 | 3 |
+| Pipeline + tracks | 6–7 | 5 |
+| Mechanism: gate · driver · routing | 8–10 | 8 |
+| Control moments + safety | 11–12 | 4 |
+| Evidence: comparative · strengths · audit | 13–15 | 5 |
+| Getting started + fit | 16–17 | 3 |
+| **Total** | | **~30** |
 
-<v-click>
+</div>
 
-**Q&A primers**
+<div class="backup-col">
+<div class="col-head">Q&amp;A primers</div>
 
 | Question | Short answer |
 |---|---|
-| vs LangGraph/CrewAI/AutoGen? | Different layer — they wire LLM calls in code; Stagecraft orchestrates AI *coding* tools |
-| Cost? | Default is one host. Fanout and multi-host are opt-in. |
-| LLM doesn't follow rules? | PreToolUse hooks enforce at tool-call time. Gate validator catches the rest. FAIL = halt. |
-| Add Cursor/Cline/Windsurf? | ~200 lines, one directory under `hosts/`. Five methods against the contract. |
-| Reproducible LLM run? | Partially. Gate records model_version, temp, seed, prompt_hash. Audit-grade, not bit-for-bit. |
+| vs LangGraph / CrewAI? | Different layer — they wire LLM API calls; Stagecraft orchestrates AI *coding* tools |
+| Cost? | One host by default. Fanout and multi-host are opt-in. |
+| LLM ignores rules? | PreToolUse hooks block at write time. Gate validator catches the rest. FAIL = halt. |
+| Add Cursor / Cline? | ~200 lines, one `hosts/` directory, five adapter methods. |
+| Reproducible run? | Partially. Gate records model_version, temp, seed, prompt_hash. Audit-grade. |
+| Share results? | `devteam report` — self-contained HTML, no service required. |
 
-</v-click>
+</div>
+
+</div>
 
 <style>
-.slidev-layout { padding: 30px 60px 50px 60px; }
-h1 { color: #4B286D; margin-bottom: 0.5em; }
-table th { background: #4B286D; color: #FFFFFF; padding: 8px 14px; }
-table td { padding: 6px 14px; color: #2C2E30; }
-table tr:nth-child(even) { background: #FAFAFA; }
-table { width: 100%; border-collapse: collapse; margin-bottom: 1em; font-size: 0.82em; }
+.slidev-layout { padding: 22px 46px 36px 46px; }
+h1 { color: #4B286D; margin-bottom: 0.45em; font-size: 1.1em; }
+.backup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.backup-col { display: flex; flex-direction: column; gap: 6px; }
+.col-head { font-size: 0.65em; font-weight: 700; color: #9B7BB8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.67em; }
+th { background: #4B286D; color: #FFFFFF; padding: 5px 8px; text-align: left; }
+td { padding: 4px 8px; color: #2C2E30; border-bottom: 1px solid #E3E6E8; }
+tr:nth-child(even) { background: #FAFAFA; }
+code { background: #F0EBF5; color: #4B286D; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; }
 </style>
 
 <!--

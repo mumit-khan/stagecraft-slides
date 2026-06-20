@@ -3,11 +3,11 @@ layout: default
 transition: slide-left
 ---
 
-# Stagecraft is not a vibe coder
+# Stagecraft is not a chat-to-code loop
 
 <div class="compare-grid">
   <div class="compare-col col-left">
-    <div class="col-heading">Vibe coding tools</div>
+    <div class="col-heading">Chat-driven AI tools</div>
     <ul>
       <li>Chat-driven: one prompt, one session</li>
       <li>Context is the conversation window</li>
@@ -49,7 +49,7 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Address the skepticism directly — don't wait for Q&A.
 
-"You've seen a dozen AI coding tools this quarter. Most of them are a better autocomplete, or a smarter chat window. Stagecraft is a different category: it's an *orchestration layer*. The AI tools (Claude, Codex, Gemini) are still doing the work — Stagecraft is the process layer that runs them through a structured pipeline."
+"You've seen a dozen AI coding tools this quarter. Most of them are a better autocomplete, or a smarter chat window — a Cursor session, a Copilot Workspace task. Stagecraft is a different category: it's an *orchestration layer*. The AI tools (Claude, Codex, Gemini) are still doing the work — Stagecraft is the process layer that runs them through a structured pipeline."
 
 "The core design principle: the core never calls a model. It emits prompts and validates JSON. Model-agnosticism follows from that directly."
 

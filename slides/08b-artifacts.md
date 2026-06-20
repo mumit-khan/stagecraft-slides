@@ -43,8 +43,11 @@ $ devteam next
 
 </div>
 
-<div class="note-bar">
+<div class="note-bar note-resume">
   Gate files are the only state the orchestrator reads. Shut down, come back in a week, <code>devteam next</code> picks up exactly here.
+</div>
+<div class="note-bar note-report">
+  After a complete run: <code>devteam report</code> opens a self-contained HTML summary — per-stage timing, workstream breakdown, all artifacts (brief, spec, code reviews, test report) embedded inline. No service. Share the file or open it in CI.
 </div>
 
 <style>
@@ -54,26 +57,36 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; flex-shrink: 0; }
 .art-col { display: flex; flex-direction: column; gap: 8px; }
 .art-heading { font-size: 0.72em; font-weight: 700; color: #9B7BB8; text-transform: uppercase; letter-spacing: 0.06em; }
 .note-bar {
-  background: #F0EBF5;
-  border-left: 4px solid #4B286D;
+  border-left: 4px solid;
   padding: 10px 16px;
   border-radius: 0 6px 6px 0;
   color: #2C2E30;
-  font-size: 0.8em;
-  margin-top: auto;
+  font-size: 0.78em;
   flex-shrink: 0;
+}
+.note-resume {
+  background: #F0EBF5;
+  border-color: #4B286D;
+  margin-top: auto;
+}
+.note-report {
+  background: #EBF5EB;
+  border-color: #2B8000;
+  margin-top: 6px;
 }
 code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.85em; color: #2C2E30; }
 </style>
 
 <!--
-Point at two things:
+Point at three things:
 
 1. "Every artifact has a filename you can cat. brief.md, design-spec.md, the gate files — no database, no service, just files in a directory. Any CI system can read them."
 
 2. "devteam next reads the last gate and tells you exactly what runs next. In headless mode it runs it. In interactive mode you approve first."
 
 3. "That warning on platform workstream: it doesn't block progress — it's recorded. You can inspect the gate to see exactly what the model flagged."
+
+4. "devteam report at the end: opens a browser tab. Three tabs — Summary (status badge, AC count), Pipeline (per-stage timing and dispatch counts), Documents (every artifact embedded). Self-contained HTML, no server."
 
 Transition: "That loop — gate → next → run — is what devteam run automates."
 -->

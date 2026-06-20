@@ -9,7 +9,6 @@ transition: slide-left
 - **The mechanism:** gate JSON, autonomous driver, multi-host routing · 8 min
 - **The evidence:** safety layers, audit trail, comparative analysis · 6 min
 - **The on-ramp:** 30-min install, pilot script, honest fit criteria · 5 min
-- **Demo artifacts:** real gates, briefs, design specs on disk · 5 min
 
 <style>
 .slidev-layout { padding: 40px 60px 60px 60px; }
@@ -22,4 +21,6 @@ strong { color: #4B286D; }
 <!--
 30-second orientation. Don't linger.
 "We'll spend most of our time on mechanism and evidence. The slides give you the mental model; the terminal is the best Q&A surface."
+
+Note: the evidence section includes a live `devteam report` callout — have a browser tab with a pre-built report.html ready if you want to show it during the audit slide.
 -->

@@ -39,7 +39,7 @@ transition: slide-left
       <div class="oc-body"><strong>budget / --until</strong><br>clean stop, state preserved and resumable</div>
     </div>
     <div class="outcome-card note-card">
-      <div class="oc-body">Not a <code>while true</code>. Bounded:<br><strong>max_retries · --budget-usd · --until</strong><br>Every decision in an append-only run log.</div>
+      <div class="oc-body">Not a <code>while true</code>. Bounded:<br><strong>max_retries · --budget-usd · --until</strong><br>Every decision in an append-only run log.<br><code>--watch</code> for a live terminal view.</div>
     </div>
   </div>
 </div>
@@ -50,6 +50,10 @@ transition: slide-left
   <span class="leg leg-halt">🔴 Halt: human required</span>
   <span class="leg leg-done">🟢 Success</span>
   <span class="leg leg-stop">⚫ Bounded stop</span>
+</div>
+
+<div class="repair-bar">
+  <strong>Bug-fix mode:</strong> <code>devteam run --repair "symptom"</code> — stage-01 produces a DIAGNOSIS instead of a brief; stage-03b injects a failing regression spec; scope gate rejects out-of-diagnosis writes. <code>--repair-at file:line</code> skips the LLM diagnosis step.
 </div>
 
 <style>
@@ -135,6 +139,19 @@ code { background: #fff; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.
 .leg-halt  { background: #FDECEA; color: #E5342A; }
 .leg-done  { background: #EBF5EB; color: #2B8000; }
 .leg-stop  { background: #F4F4F7; color: #676E73; }
+.repair-bar {
+  background: #FFF3E0;
+  border-left: 4px solid #E07C00;
+  padding: 10px 16px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.75em;
+  color: #2C2E30;
+  line-height: 1.5;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.repair-bar strong { color: #E07C00; }
+.repair-bar code { background: #FFF; padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; }
 </style>
 
 <!--
@@ -149,4 +166,8 @@ Walk the loop track at the top first.
 "Budget ceiling and --until give you a clean stop. State is preserved. Resume from exactly where it stopped."
 
 "This is not `while true`. The autonomy is explicit: max_retries, --budget-usd X, --until <stage>. Every decision is recorded in an append-only run log."
+
+"--watch gives you a live terminal view: current stage, dispatch elapsed, heartbeat age, stall status. ANSI-clean so it works in redirected output too."
+
+"Bottom bar: bug-fix mode. If you're fixing a known defect rather than building a feature, --repair rewires stage-01 to produce a diagnosis and injects a failing regression spec at stage-03b. The build then runs in scope-constrained mode — can't touch files outside the diagnosis. --repair-at skips the LLM diagnosis if you already know the file and line."
 -->
