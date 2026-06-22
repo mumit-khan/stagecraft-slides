@@ -41,8 +41,8 @@ transition: slide-left
 </div>
 
 <div class="roadmap-card orange">
-  <div class="rcard-title">API-direct adapter</div>
-  <div class="rcard-body">A lighter provider API path for environments that cannot install a host CLI. Lower priority than hardening the existing adapter and remote-worker contracts.</div>
+  <div class="rcard-title">Omnigent host adapter</div>
+  <div class="rcard-body">Evaluate Omnigent as an execution runtime for harness choice, sandboxing, cloud workers, and collaboration—while Stagecraft retains stage progression, validation, and evidence ownership.</div>
 </div>
 
 </div>
@@ -50,7 +50,7 @@ transition: slide-left
 </div>
 
 <div class="posture-bar">
-  <strong>Roadmap posture:</strong> preserve the gate and authority contracts; unlock automation from measured evidence, not optimism.
+  <strong>Roadmap posture:</strong> Stagecraft stays the delivery and evidence plane; execution runtimes such as Omnigent can sit beneath it.
 </div>
 
 <style>
@@ -94,5 +94,5 @@ Near-horizon:
 Evidence-gated extensions:
 - Recipe factory: accepted resolutions become reusable only after recurrence and derivability thresholds are satisfied.
 - Conversational upstream: useful only if pilots show requirements need dialogue before the gate is written.
-- API-direct: a possible restricted-environment adapter, deliberately behind current contract hardening.
+- Omnigent adapter: investigate integration before duplicating its session, sandbox, cloud-host, and collaboration infrastructure. Stagecraft must remain the sole owner of routing authority, gate validation, and pipeline state.
 -->

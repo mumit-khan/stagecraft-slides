@@ -26,6 +26,13 @@ transition: slide-left
       <td>✅ review, red team, QA, deploy, retro</td>
       <td>✅ Per-role + per-stage routing</td>
     </tr>
+    <tr class="near">
+      <td><strong>Omnigent</strong></td>
+      <td>Agent runtime + meta-harness</td>
+      <td>✅ ALLOW / DENY / ASK action policies</td>
+      <td>⚠ Workflow-defined; Polly plans, builds, reviews</td>
+      <td>✅ Per-agent harness + model</td>
+    </tr>
     <tr>
       <td>Copilot Workspace</td>
       <td>Spec → plan → implement</td>
@@ -54,16 +61,12 @@ transition: slide-left
       <td>⚠ Agent/hook dependent</td>
       <td>❌ Native Kiro surfaces only</td>
     </tr>
-    <tr>
-      <td>Agent OS</td>
-      <td>Standards context</td>
-      <td>❌ Not its focus</td>
-      <td>❌ Outside scope</td>
-      <td>⚠ Works alongside agents</td>
-    </tr>
   </tbody>
 </table>
 </div>
+
+<div class="closest"><strong>Closest overlap:</strong> multi-host execution and policy enforcement. <strong>Boundary:</strong> Omnigent governs agent sessions; Stagecraft governs an ordered SDLC and its evidence.</div>
+<div class="sources">Omnigent sources: <a href="https://github.com/omnigent-ai/omnigent">README</a> · <a href="https://github.com/omnigent-ai/omnigent/blob/main/docs/POLICIES.md">Policies</a> · reviewed 2026-06-21</div>
 
 <style>
 .slidev-layout { padding: 25px 50px 45px 50px; }
@@ -76,7 +79,13 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 .comp-table tr.hl { background: #F0EBF5 !important; }
 .comp-table tr.hl td { color: #2C2E30; }
 .comp-table tr.hl td:first-child { color: #4B286D; font-weight: bold; }
+.comp-table tr.near { background: #F5FAF2; }
+.comp-table tr.near td:first-child { color: #2B8000; }
 .comp-table strong { color: #4B286D; }
+.closest { margin-top: 9px; padding: 7px 10px; background: #F0EBF5; border-left: 3px solid #4B286D; color: #2C2E30; font-size: 0.67em; line-height: 1.4; }
+.closest strong { color: #4B286D; }
+.sources { margin-top: 5px; color: #676E73; font-size: 0.56em; }
+.sources a { color: #4B286D; text-decoration: underline; }
 </style>
 
 <!--
@@ -85,11 +94,11 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 "Stagecraft's distinctive combination is mechanical gate enforcement, heterogeneous host routing, and post-build depth through deploy and retro."
 
 "Concrete differences:
+- vs Omnigent: this is the closest overlap. Omnigent is a broad agent runtime and collaboration control plane: multiple harnesses, cross-vendor review, action policies, OS sandboxes, cloud hosts, and shared sessions. Stagecraft is narrower and more opinionated: its source of truth is the ordered SDLC, schema-validated gates, delivery artifacts, and tamper-evident evidence chain. An Omnigent adapter could make the products complementary.
 - vs Copilot Workspace: Workspace takes a task and generates a plan + implementation. Ends there. No review, no red team, no deploy — and gates are a checklist you tick, not a validator that blocks.
 - vs Spec Kit: Spec Kit ends at implementation. Stagecraft runs review, red team, QA, deploy.
 - vs BMAD: BMAD is stronger at conversational product shaping. Stagecraft wins on deterministic execution — you can't argue your way past a gate validator.
-- vs Kiro: Kiro is an integrated IDE environment. Stagecraft can compose with Kiro as a host.
-- vs Agent OS: Standards context only, no pipeline structure."
+- vs Kiro: Kiro is an integrated IDE environment. Stagecraft can compose with Kiro as a host."
 
 "The highlighted row is us. Stagecraft's row is verifiable against the codebase. Revalidate competitor rows against current vendor documentation before presenting externally."
 -->

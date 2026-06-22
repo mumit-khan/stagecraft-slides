@@ -16,8 +16,8 @@ transition: slide-left
 <div class="strength">
   <div class="num">02</div>
   <div class="body">
-    <div class="title">Heterogeneous dispatch</div>
-    <div class="desc">Roles in one run can use different host CLIs, including N-way review fanout. Models never share a context window. The interface is JSON on disk.</div>
+    <div class="title">Runtime-independent delivery contract</div>
+    <div class="desc">Host adapters keep the ordered stages and gate semantics independent from the executor. Multi-host fanout is useful; the durable process contract is the differentiation.</div>
   </div>
 </div>
 
@@ -65,7 +65,7 @@ These survive adversarial questioning.
 
 01: "Mechanical verification overrides model assertions. devteam verify runs the tests and stamps the gate — if 3 tests fail, the gate is FAIL regardless of what the model claimed."
 
-02: "N-way review fanout can route reviewers to different hosts. They do not share a model context; structured artifacts and gates are the handoff."
+02: "Omnigent confirms that multi-host execution is becoming platform capability, not a moat by itself. Stagecraft's durable advantage is that the same ordered SDLC and gate contract survives whichever runtime executes the work."
 
 03: "The autonomy is explicit. You know exactly what it will and won't do. It won't retry past the ceiling, self-modify rules, or extend its own grants."
 
