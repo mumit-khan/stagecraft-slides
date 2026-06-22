@@ -12,15 +12,15 @@ transition: fade
 
 | Section | Slides | Min |
 |---|---|---|
-| Hook + framing + problem | 1–3 | 4 |
-| Agenda + before/after | 4–5 | 3 |
-| Pipeline + tracks | 6–7 | 5 |
-| Mechanism: gate · driver · routing | 8–10 | 8 |
-| Control moments + safety | 11–12 | 4 |
-| Evidence: comparative · strengths · audit | 13–15 | 5 |
-| Getting started + fit | 16–17 | 3 |
-| What's next | 18 | 2 |
-| **Total** | | **~32** |
+| Hook + framing + problem | 1–3 | 3 |
+| Agenda + before/after | 4–5 | 2 |
+| Pipeline + tracks | 6–7 | 4 |
+| Mechanism: gate · artifacts · driver · routing | 8–11 | 7 |
+| Control moments + safety | 12–13 | 4 |
+| Evidence: comparative · strengths · audit · verify | 14–17 | 5 |
+| Getting started + fit | 18–19 | 3 |
+| What's next | 20 | 2 |
+| **Total** | | **~30** |
 
 </div>
 
@@ -32,8 +32,8 @@ transition: fade
 | vs LangGraph / CrewAI? | Different layer — they wire LLM API calls; Stagecraft orchestrates AI *coding* tools |
 | Cost? | One host by default. Fanout and multi-host are opt-in. |
 | LLM ignores rules? | PreToolUse hooks block at write time. Gate validator catches the rest. FAIL = halt. |
-| Add Cursor / Cline? | ~200 lines, one `hosts/` directory, five adapter methods. |
-| Reproducible run? | Partially. Gate records model_version, temp, seed, prompt_hash. Audit-grade. |
+| Add Cursor / Cline? | One `hosts/` directory implementing the host-adapter contract. |
+| Reproducible run? | Partially. Optional host metadata plus gate, prompt, and artifact hashes improve replay and auditability. |
 | Share results? | `devteam report` — self-contained HTML, no service required. |
 
 </div>

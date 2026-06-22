@@ -6,8 +6,8 @@ transition: fade
 <div class="stat-page">
 
 <div class="big-stat">
-  <div class="big-num">2,056</div>
-  <div class="big-label">runtime tests: gate validation, CLI commands, hook enforcement. Not assertions, not mocks.</div>
+  <div class="big-num">2,000+</div>
+  <div class="big-label">automated tests covering gate validation, CLI behavior, dispatch, hooks, evidence, and failure paths. Exact totals come from the current CI run.</div>
 </div>
 
 <div class="sub-grid">
@@ -16,8 +16,8 @@ transition: fade
     <div class="sub-label">ordered stages</div>
   </div>
   <div class="sub-stat">
-    <div class="sub-num">100</div>
-    <div class="sub-label">test files</div>
+    <div class="sub-num">CI</div>
+    <div class="sub-label">offline test suite</div>
   </div>
   <div class="sub-stat">
     <div class="sub-num">6</div>
@@ -69,7 +69,7 @@ code { color: #4B286D; background: #F0EBF5; padding: 0.1em 0.4em; border-radius:
 </style>
 
 <!--
-Let the 2,056 land. Then clarify what "runtime tests" means — not unit assertions, but tests that actually invoke CLI commands, write gate files, fire hooks.
+Let "2,000+" land, then keep it honest: this is a conventional automated test suite with assertions, fixtures, and integration-style coverage of CLI commands, gate files, hooks, and failure paths. Use the current CI output if someone asks for the exact total.
 
 "The SHA-256 chain is the bit most people don't expect. Every gate references its predecessor's hash. devteam verify-chain walks the full chain — one tampered file fails the whole audit. You can wire it into CI in two lines."
 

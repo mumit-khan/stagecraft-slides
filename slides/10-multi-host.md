@@ -3,7 +3,7 @@ layout: two-cols
 transition: fade
 ---
 
-# Right model per role. 12 lines of YAML.
+# Right host per role. A small YAML routing block.
 
 ```yaml {1-2|3-6|7-8|all}
 routing:
@@ -31,7 +31,7 @@ pipeline:
   </div>
   <div class="fact">
     <div class="fact-title">Adding a new host</div>
-    <div class="fact-body">~200 lines. One directory under <code>hosts/</code>. Five methods against the 150-line adapter contract.</div>
+    <div class="fact-body">One directory under <code>hosts/</code>, implementing the small host-adapter contract.</div>
   </div>
   <div class="fact">
     <div class="fact-title">Works today</div>
@@ -62,5 +62,5 @@ Click 1 — default_host: "Any workstream not explicitly routed falls through to
 Click 2 — roles: "Claude for design and review. Codex for backend bulk generation. Gemini for adversarial QA."
 Click 3 — stage override: "Stage overrides beat role overrides. Deploy always runs on Claude Code because the runbook has CC-specific instructions. One line of config."
 
-Right column: "The core never invokes a model. All model-specific code is in the host adapter — five methods, 150-line contract. The seam between models is JSON."
+Right column: "The core never invokes a model. Model-specific behavior stays inside the host adapter. The contract between hosts is structured JSON on disk."
 -->

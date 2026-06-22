@@ -5,6 +5,8 @@ transition: slide-left
 
 # Where Stagecraft sits in the AI coding landscape
 
+<p class="as-of">Directional comparison · validate against current vendor docs before external use · June 2026</p>
+
 <div class="comp-table-wrap">
 <table class="comp-table">
   <thead>
@@ -66,6 +68,7 @@ transition: slide-left
 <style>
 .slidev-layout { padding: 25px 50px 45px 50px; }
 h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
+.as-of { color: #676E73; font-size: 0.62em; margin: -0.45em 0 0.45em; }
 .comp-table-wrap { overflow: hidden; }
 .comp-table { width: 100%; border-collapse: collapse; font-size: 0.72em; }
 .comp-table th { background: #4B286D; color: #FFFFFF; padding: 7px 10px; text-align: left; }
@@ -79,7 +82,7 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 <!--
 "The useful distinction across these tools is the source of operational truth and post-build depth."
 
-"Stagecraft is the only one that combines: mechanical gate enforcement (not just checklists), heterogeneous multi-host routing, AND full post-build depth through deploy and retro."
+"Stagecraft's distinctive combination is mechanical gate enforcement, heterogeneous host routing, and post-build depth through deploy and retro."
 
 "Concrete differences:
 - vs Copilot Workspace: Workspace takes a task and generates a plan + implementation. Ends there. No review, no red team, no deploy — and gates are a checklist you tick, not a validator that blocks.
@@ -88,5 +91,5 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 - vs Kiro: Kiro is an integrated IDE environment. Stagecraft can compose with Kiro as a host.
 - vs Agent OS: Standards context only, no pipeline structure."
 
-"The highlighted row is us. Every ✅ is verifiable against the codebase — not marketing copy."
+"The highlighted row is us. Stagecraft's row is verifiable against the codebase. Revalidate competitor rows against current vendor documentation before presenting externally."
 -->

@@ -11,6 +11,7 @@ transition: fade
 {
   "stage": "stage-04",
   "status": "PASS",
+  "orchestrator": "devteam@0.4.0",
   "track": "full",
   "timestamp": "2026-06-18T14:32:11Z",
   "blockers": [],
@@ -27,7 +28,7 @@ transition: fade
 
 <v-click>
 
-`pipeline-complete` is reconstructable from `pipeline/gates/` **alone.** No model state required.
+Completed stage progression is reconstructable from `pipeline/gates/`. Active autonomous runs also retain bounded run state and an append-only decision log.
 
 </v-click>
 
@@ -41,13 +42,13 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Don't read the JSON. Point at three regions, one click each:
 
-Click 1 — Identity: "Every gate carries the same envelope: stage, status, track, timestamp. Audit a deploy six months from now — you know exactly what produced this artifact, what model version, what prompt hash."
+Click 1 — Identity: "Every gate carries the same envelope: stage, status, orchestrator, track, timestamp. Optional reproducibility fields can record model and prompt metadata when the host supplies them."
 
 Click 2 — Blockers/warnings/chain: "Status FAIL means blockers MUST be non-empty — the validator enforces this. Chain is tamper-evident: `devteam verify-chain` walks every gate and checks prev_hash integrity."
 
 Click 3 — Workstreams: "Build is multi-role. Backend ran on Codex, QA on Gemini, frontend on Claude Code. Each wrote its own gate; the orchestrator merged them. Aggregate status is pessimistic: any FAIL → merged FAIL."
 
-Click 4 — the key claim: "The orchestrator stores no state outside these files. The full pipeline is reconstructable from pipeline/gates/ alone — you can shut down the machine, come back in a month, and resume."
+Click 4 — the key claim: "Completed stage progression is on disk in pipeline/gates/. During an autonomous run, run-state.json and the append-only run log retain retry, budget, authority, and resume details. No hidden model session is the source of truth."
 
 Then: "Let me show you a real one." → switch to terminal.
 -->

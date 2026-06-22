@@ -32,14 +32,14 @@ transition: slide-left
     </div>
     <div class="outcome-card done">
       <div class="oc-icon">🎉</div>
-      <div class="oc-body"><strong>pipeline-complete</strong><br>commit artifacts, sign-off gate written</div>
+      <div class="oc-body"><strong>pipeline-complete</strong><br>all track stages are PASS or WARN</div>
     </div>
     <div class="outcome-card stop">
       <div class="oc-icon">⏸</div>
       <div class="oc-body"><strong>budget / --until</strong><br>clean stop, state preserved and resumable</div>
     </div>
     <div class="outcome-card note-card">
-      <div class="oc-body">Not a <code>while true</code>. Bounded:<br><strong>max_retries · --budget-usd · --until</strong><br>Every decision in an append-only run log.<br><code>--watch</code> for a live terminal view.</div>
+    <div class="oc-body">Not a <code>while true</code>. Bounded:<br><strong>max_retries · --budget-usd · --until</strong><br>Every decision in an append-only run log.<br><code>--auto-commit</code> is explicit.</div>
     </div>
   </div>
 </div>
@@ -163,7 +163,7 @@ Walk the loop track at the top first.
 
 "ESCALATE is for judgment calls the system can't make — it halts and prompts you with devteam ruling --topic '...'. You make the call, pipeline resumes."
 
-"Budget ceiling and --until give you a clean stop. State is preserved. Resume from exactly where it stopped."
+"Budget ceiling and --until give you a clean stop. State is preserved. Resume from exactly where it stopped. Committing is a separate authority: use --auto-commit or devteam commit."
 
 "This is not `while true`. The autonomy is explicit: max_retries, --budget-usd X, --until <stage>. Every decision is recorded in an append-only run log."
 

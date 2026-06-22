@@ -9,16 +9,16 @@ transition: slide-left
   <div class="track track-full"><span class="track-name">full</span><span class="track-stages">Brief → Design → Build → Review → QA → Deploy → Retro</span></div>
   <div class="track track-quick"><span class="track-name">quick</span><span class="track-stages">Brief → Build → Review → QA → Deploy → Retro</span></div>
   <div class="track track-nano"><span class="track-name">nano</span><span class="track-stages">Build → Review → QA</span></div>
-  <div class="track track-config"><span class="track-name">config-only</span><span class="track-stages">Build → Review</span></div>
-  <div class="track track-dep"><span class="track-name">dep-update</span><span class="track-stages">Build → Review → QA</span></div>
-  <div class="track track-hotfix"><span class="track-name">hotfix ⚡</span><span class="track-stages">Brief → Build → Review → QA → Deploy &nbsp;·&nbsp; <em>skips design, keeps ALL safety</em></span></div>
+  <div class="track track-config"><span class="track-name">config-only</span><span class="track-stages">Build → Pre-review → conditional safety → QA → Sign-off → Deploy</span></div>
+  <div class="track track-dep"><span class="track-name">dep-update</span><span class="track-stages">Build → Review → QA → Sign-off → Deploy</span></div>
+  <div class="track track-hotfix"><span class="track-name">hotfix ⚡</span><span class="track-stages">Build → safety reviews → Peer → QA gates → Sign-off → Deploy → Retro</span></div>
 </div>
 
 <v-clicks>
 
 - `devteam assess` **infers the right track** from description keywords + file heuristics
-- `hotfix` skips brief but **keeps every safety stage:** red team still runs
-- `full` required for anything touching <span v-mark.box="3" style="color:#4B286D">auth · payments · migrations</span>
+- `hotfix` skips upstream discovery but keeps red team, conditional safety, QA, and deploy controls
+- lighter tracks are blocked for <span v-mark.box="3" style="color:#4B286D">auth · payments · migrations</span>; use `full` or the deliberate `hotfix` path
 
 </v-clicks>
 
@@ -61,11 +61,11 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Walk the track rows top to bottom — 30 seconds.
 
-"Full is end-to-end: all 18 stages. nano is just build+review+QA — a one-liner doesn't need a design stage. config-only skips QA entirely."
+"Full is end-to-end: all 18 stages. nano is just build, a single reviewer, and QA. Config-only still runs QA, sign-off, and deploy; it trims product discovery, not operational proof."
 
-"The key safety invariant: hotfix skips the design stage because you know what's broken — but it does NOT skip red team, security review, or migration safety. The lighter tracks exist for speed; they don't sacrifice the safety stages."
+"Hotfix starts at build because the defect scope is already known. It still runs pre-review, red team, conditional security and migration checks, QA gates, sign-off, deploy, and retro."
 
-"`devteam assess` runs heuristics on the description and changed files — if you mention 'add auth middleware', it forces full track and tells you why."
+"`devteam assess` runs heuristics on the description and changed files. Sensitive work is rejected on lighter tracks; full and hotfix are deliberate exceptions with deeper controls."
 
 Transition: "Now — the mechanism that holds all of this together."
 -->

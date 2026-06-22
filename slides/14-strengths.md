@@ -65,7 +65,7 @@ These survive adversarial questioning.
 
 01: "Mechanical verification overrides model assertions. devteam verify runs the tests and stamps the gate — if 3 tests fail, the gate is FAIL regardless of what the model claimed."
 
-02: "No other tool in this space has N-way review fanout where each reviewer runs a different host. The backend reviewer runs Codex, the security reviewer runs Claude. They never share context."
+02: "N-way review fanout can route reviewers to different hosts. They do not share a model context; structured artifacts and gates are the handoff."
 
 03: "The autonomy is explicit. You know exactly what it will and won't do. It won't retry past the ceiling, self-modify rules, or extend its own grants."
 

@@ -14,11 +14,12 @@ transition: fade
 pipeline/
 ├── brief.md              ← stage-01 output
 ├── design-spec.md        ← stage-02 output
-├── feature-spec.md       ← stage-03a output
+├── spec.feature          ← stage-03b executable spec
 └── gates/
     ├── stage-01.json     PASS  Brief
     ├── stage-02.json     PASS  Design
-    ├── stage-03a.json    PASS  Spec
+    ├── stage-03.json     PASS  Clarification
+    ├── stage-03b.json    PASS  Executable spec
     └── stage-04.json     PASS  Build (4 workstreams)
 ```
 
@@ -36,7 +37,7 @@ $ devteam next
     platform  ⚠   claude-code  (1 warning)
     qa        ✅  claude-code
 
-▶ run-stage peer-review  (stage-05)
+▶ run-stage pre-review  (stage-04a)
 ```
 
 </div>
@@ -44,7 +45,7 @@ $ devteam next
 </div>
 
 <div class="note-bar note-resume">
-  Gate files are the only state the orchestrator reads. Shut down, come back in a week, <code>devteam next</code> picks up exactly here.
+  Gates reconstruct completed stage progression. Autonomous runs additionally preserve bounded resume, retry, budget, and authority state in <code>run-state.json</code> and the append-only run log.
 </div>
 <div class="note-bar note-report">
   After a complete run: <code>devteam report</code> opens a self-contained HTML summary — per-stage timing, workstream breakdown, all artifacts (brief, spec, code reviews, test report) embedded inline. No service. Share the file or open it in CI.
@@ -82,7 +83,7 @@ Point at three things:
 
 1. "Every artifact has a filename you can cat. brief.md, design-spec.md, the gate files — no database, no service, just files in a directory. Any CI system can read them."
 
-2. "devteam next reads the last gate and tells you exactly what runs next. In headless mode it runs it. In interactive mode you approve first."
+2. "devteam next reads the gate chain and tells you exactly what runs next. Here, build is followed by the mechanically stamped pre-review stage."
 
 3. "That warning on platform workstream: it doesn't block progress — it's recorded. You can inspect the gate to see exactly what the model flagged."
 

@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-# You make 3 decisions. The framework handles the rest.
+# Three human decision moments. The framework handles the loop.
 
 <div class="decisions">
   <div class="decision">
@@ -30,7 +30,7 @@ transition: slide-left
 </div>
 
 <div class="callout">
-  Between decisions: the orchestrator dispatches, collects gates, auto-retries code-defect failures, and advances. <strong>5–10 min of active decisions over 30–60 min wall-clock.</strong>
+  Between decision moments: the orchestrator dispatches, collects gates, auto-retries bounded code-defect failures, and advances. <strong>Human judgment stays concentrated at intent, escalations, and consequential actions.</strong>
 </div>
 
 <style>

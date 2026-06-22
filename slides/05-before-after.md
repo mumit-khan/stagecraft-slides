@@ -24,10 +24,10 @@ transition: slide-left
 - 18+ artifacts + gates
 - Approvals: `pipeline/gates/stage-05.json`
 - Scope: `pipeline/brief.md`, versioned
-- Tests: gated, 1:1 criterion mapping
+- Tests: gated; AC mapping on spec-driven tracks
 - Review: `REVIEW: APPROVED` or `CHANGES REQUESTED`
 - Audit: `cat pipeline/gates/*.json`
-- Model: Claude → design, Codex → build, Gemini → QA
+- Model: configurable per role and stage
 
 <style>
 .slidev-layout { padding: 40px 60px 60px 60px; }
@@ -43,9 +43,9 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Walk rows by pairing left → right. Spend a beat on three:
 
-1. "1:1 criterion mapping" — Stage 6's gate requires all_acceptance_criteria_met: true. The validator rejects PASS gates without it. This isn't advisory.
+1. "AC mapping" — on full and quick tracks, the executable spec maps AC-N → Scenario → test evidence. Stage 6's PASS contract requires acceptance criteria to be met.
 
 2. "REVIEW: APPROVED / CHANGES REQUESTED" — not a thumbs up in Slack. A structured verdict in a file the pipeline reads.
 
-3. "Claude → design, Codex → build, Gemini → QA" — the seam between them is JSON, not a model API. 12 lines of YAML configures it.
+3. "Configurable per role and stage" — the contract between hosts is JSON, not a shared model context. A small YAML routing block configures it.
 -->

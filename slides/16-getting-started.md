@@ -3,7 +3,7 @@ layout: two-cols
 transition: fade
 ---
 
-# Running a pipeline in 30 minutes
+# From clone to a bounded first run
 
 ```bash {1-2|3-5|6-8|9-10|all}
 # 1. Install (one time, anywhere)
@@ -26,16 +26,16 @@ Or run the whole pipeline:
 
 ```bash
 devteam run --feature "Add SMS opt-in" \
-  --track quick --budget-usd 5 --headless
+  --track quick --budget-usd 5
 ```
 
 ::right::
 
 **What `devteam init` installs**
 
-- `.claude/agents/*.md` (12 role subagents)
-- `.claude/skills/` (13 task helpers)
-- `.devteam/rules/` (10 pipeline rules + per-stage docs)
+- `.claude/agents/*.md` (role briefs rendered for the host)
+- `.claude/skills/` (task-specific procedures)
+- `.devteam/rules/` (pipeline rules + per-stage docs)
 - `settings.local.json` (hooks: validator, secret-scan, approval-derivation)
 - `pipeline/gates/` (workspace for gate files)
 
@@ -47,7 +47,7 @@ devteam run --feature "Add SMS opt-in" \
 
 ```
 ✅ hooks wired (Stop, SubagentStop, PreToolUse)
-✅ 12 agent files present
+✅ required agent files present
 ✅ host CLI on PATH: claude
 ✅ gate workspace exists
 ```
@@ -64,9 +64,9 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Walk the four code steps — 60 seconds.
 
-"Install takes two minutes. init lays down 40 files — role subagents, rules, hooks, commands. doctor verifies everything is green."
+"Install the CLI, initialize the target project, then let doctor verify the adapter, rules, hooks where supported, host CLI, and gate workspace."
 
 "Headless mode pipes the prompt directly to the host CLI and waits for the gate file. No copy-paste, no switching windows."
 
-"devteam run runs the whole pipeline: advances on PASS, retries code-defect FAILs, halts for escalations. --budget-usd 5 caps cost — useful for first runs."
+"devteam run is already headless: it advances on PASS/WARN, retries bounded code-defect failures, and halts for escalations or consequence ceilings. --budget-usd 5 adds an explicit cost boundary."
 -->

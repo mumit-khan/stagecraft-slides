@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-# 10 layers catch problems before merge
+# Up to 10 safety layers—selected by track and change surface
 
 <div class="safety-grid">
 
@@ -24,7 +24,7 @@ transition: slide-left
 
 <div class="layer veto">
   <div class="layer-title">🔴 Security review</div>
-  <div class="layer-body">Fires on sensitive paths. Veto power: cannot be overridden</div>
+  <div class="layer-body">Conditional on sensitive paths. Veto findings cannot be overridden</div>
 </div>
 
 <div class="layer veto">
@@ -49,7 +49,7 @@ transition: slide-left
 
 <div class="layer gate">
   <div class="layer-title">Accessibility gate</div>
-  <div class="layer-body">0 critical WCAG violations required</div>
+  <div class="layer-body">Included on full, quick, and hotfix; 0 critical WCAG violations required</div>
 </div>
 
 <div class="layer gate">

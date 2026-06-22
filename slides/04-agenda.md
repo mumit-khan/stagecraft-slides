@@ -8,7 +8,7 @@ transition: slide-left
 - **The pipeline:** 18 stages, 6 tracks, 3-phase visual · 6 min
 - **The mechanism:** gate JSON, autonomous driver, multi-host routing · 8 min
 - **The evidence:** safety layers, audit trail, comparative analysis · 6 min
-- **The on-ramp:** 30-min install, pilot script, honest fit criteria · 5 min
+- **The on-ramp:** first-run walkthrough, pilot script, honest fit criteria · 5 min
 
 <style>
 .slidev-layout { padding: 40px 60px 60px 60px; }

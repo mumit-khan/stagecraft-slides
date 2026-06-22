@@ -9,7 +9,7 @@ transition: fade
 
   <div class="verify-item">
     <div class="v-cmd"><code>npm test</code></div>
-    <div class="v-result">2,056 pass. Runtime tests: gate validation, CLI dispatch, hook enforcement. Not assertions.</div>
+    <div class="v-result">Runs the full offline suite. The current output supplies the exact test total and exposes any failure.</div>
   </div>
 
   <div class="verify-item">
@@ -19,12 +19,12 @@ transition: fade
 
   <div class="verify-item">
     <div class="v-cmd"><code>cat pipeline/gates/stage-04.json</code></div>
-    <div class="v-result">Every decision: workstream status, model version, timestamp, blockers, warnings. Nothing in a service or a log.</div>
+    <div class="v-result">Workstream status, host, timestamp, blockers, and warnings. Optional reproducibility fields appear when the host supplies them.</div>
   </div>
 
   <div class="verify-item">
     <div class="v-cmd"><code>devteam doctor</code></div>
-    <div class="v-result">Checks hooks wired, agent files present, host CLI on PATH. Green means ready. Non-green tells you exactly why.</div>
+    <div class="v-result">Checks the installed adapter, required files, host CLI, hooks where supported, and gate workspace. Non-green explains why.</div>
   </div>
 
 </div>

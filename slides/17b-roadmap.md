@@ -8,46 +8,41 @@ transition: slide-left
 <div class="roadmap-grid">
 
 <div class="roadmap-col">
-<div class="col-head">Near-horizon · planned or evidence-gated</div>
+<div class="col-head">Near-horizon · proposed or evidence-gated</div>
+
+<div class="roadmap-card purple">
+  <div class="rcard-title">Safe pipeline acceleration</div>
+  <div class="rcard-body">Measure the critical path, reuse hash-bound verification receipts, run independent suites concurrently, and schedule review/audit waves without removing a gate.</div>
+</div>
 
 <div class="roadmap-card purple">
   <div class="rcard-title">Cloud runner adapter</div>
-  <div class="rcard-body">Route workstreams to AWS Lambda/Bedrock — long-running stages off the laptop. Local orchestrator retains full routing, gating, and state ownership.</div>
+  <div class="rcard-body">A provider-neutral remote workstream worker for long audits and large test suites. Routing, validation, authority, gate stamping, and state remain local. Proposed; ADR required.</div>
 </div>
 
 <div class="roadmap-card purple">
   <div class="rcard-title">Continuous adaptive routing</div>
-  <div class="rcard-body">Auto-reroute the <em>next</em> run based on prior dispatch outcomes. D5 today proposes swaps; the mature form acts automatically — evidence-gated on ≥5 dispatches per (role, host) across ≥2 projects.</div>
-</div>
-
-<div class="roadmap-card purple">
-  <div class="rcard-title">Recipe factory (H3)</div>
-  <div class="rcard-body">Resolved escalations index as fix-recipes in the embedding store. Recurring derivable failures resolve deterministically — no escalation on second occurrence.</div>
-</div>
-
-<div class="roadmap-card green">
-  <div class="rcard-title">API-direct adapter</div>
-  <div class="rcard-body">No host CLI required — talk to Anthropic, OpenAI, or Google directly. Lighter footprint for restricted or cloud-native environments.</div>
+  <div class="rcard-body">Propose—and eventually apply—next-run host changes from durable dispatch evidence. Automatic action remains gated on cross-project sample depth.</div>
 </div>
 
 </div>
 
 <div class="roadmap-col">
-<div class="col-head">Innovation bets · speculative</div>
+<div class="col-head">Evidence-gated extensions</div>
+
+<div class="roadmap-card orange">
+  <div class="rcard-title">Recipe factory</div>
+  <div class="rcard-body">Turn repeatedly accepted, hash-bound resolutions into deterministic fix recipes. Reuse only after recurrence, derivability, and cross-project evidence thresholds are met.</div>
+</div>
 
 <div class="roadmap-card orange">
   <div class="rcard-title">Conversational upstream stages</div>
-  <div class="rcard-body"><code>devteam stage requirements --interactive</code> — Q&amp;A with the PM subagent refines the brief before it renders. Unlocks when five real teams report the gate loop is too rigid upstream.</div>
+  <div class="rcard-body">Optional requirements Q&amp;A before the brief locks. Unlock only if real pilots show that the current upstream gate loop is too rigid.</div>
 </div>
 
 <div class="roadmap-card orange">
-  <div class="rcard-title">Multi-modal stages</div>
-  <div class="rcard-body">Design specs include architecture diagrams as images. Stage 2 and stage 5 accept image inputs; Principal can output a system diagram, not just prose. Visual reasoning inline.</div>
-</div>
-
-<div class="roadmap-card orange">
-  <div class="rcard-title">Self-modifying pipeline</div>
-  <div class="rcard-body">Retrospective stage proposes changes to <code>stages.js</code> / <code>roles/</code> / <code>rules/</code> based on what worked — queued for human approval. The pipeline learns its own shape from operation.</div>
+  <div class="rcard-title">API-direct adapter</div>
+  <div class="rcard-body">A lighter provider API path for environments that cannot install a host CLI. Lower priority than hardening the existing adapter and remote-worker contracts.</div>
 </div>
 
 </div>
@@ -55,7 +50,7 @@ transition: slide-left
 </div>
 
 <div class="posture-bar">
-  <strong>Six positioning bets:</strong> models keep getting smarter · diversity beats monoculture · evals are the rate-limit · memory is the next frontier · tool depth beats raw intelligence · compliance is coming fast
+  <strong>Roadmap posture:</strong> preserve the gate and authority contracts; unlock automation from measured evidence, not optimism.
 </div>
 
 <style>
@@ -83,22 +78,21 @@ code { background: rgba(255,255,255,0.7); padding: 0.1em 0.3em; border-radius: 3
   color: #4B286D;
   line-height: 1.5;
   flex-shrink: 0;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 .posture-bar strong { color: #4B286D; }
 </style>
 
 <!--
-Not a commitment list — each item has an explicit unlock condition.
+Not a commitment list. The cloud-runner and speed documents are proposed plans; evidence-gated capabilities keep explicit unlock conditions.
 
 Near-horizon:
-- Cloud runner: the key shift is that a 2-hour red-team sweep or full test suite no longer blocks the dev's laptop. The local orchestrator still makes every routing, gating, and state decision — the remote worker receives only one rendered prompt and one bounded workspace snapshot.
-- Adaptive routing (D5 maturation): Phase 17 made dispatch history durable during real runs. The gate opens when ≥5 dispatches per (role, host) pair land across ≥2 real projects. Until then D5 is still advisory (proposals, not automatic).
-- H3 recipe factory: Phase 18 made explicit hash-bound acceptance measurable. The gate opens when ≥2 projects each show ≥5 autonomous fix/retry runs with the same failure accepted ≥3 times and ≥80% derivability. GitHub #142.
-- API-direct: useful for regulated environments that can't install Claude Code — reduces the dependency footprint to just a network call.
+- Pipeline acceleration: measure first, then remove duplicate work and parallelize only stages or suites whose contracts are independent.
+- Cloud runner: remote execution, not remote orchestration. The local process retains every routing, gating, authority, and state decision. The current Phase 21 plan is provider-neutral and requires an ADR before implementation.
+- Adaptive routing: durable dispatch history exists; automatic rerouting remains evidence-gated and cross-project.
 
-Innovation bets:
-- Conversational upstream: the pipeline loop is intentionally rigid for build/review/QA; for requirements it can feel premature to lock the brief before Q&A. E9 unlocks when five real teams report that. Discovery-gated at 2026-06-19.
-- Multi-modal: stage 2 already writes prose design specs — the next step is attaching architecture diagrams that stage 5 (peer review) can reason about visually.
-- Self-modifying pipeline (G9): premature until multiple teams run different configurations. The retrospective stage becomes the right vehicle once there's diversity of real operation to learn from.
+Evidence-gated extensions:
+- Recipe factory: accepted resolutions become reusable only after recurrence and derivability thresholds are satisfied.
+- Conversational upstream: useful only if pilots show requirements need dialogue before the gate is written.
+- API-direct: a possible restricted-environment adapter, deliberately behind current contract hardening.
 -->

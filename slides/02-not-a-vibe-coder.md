@@ -7,13 +7,13 @@ transition: slide-left
 
 <div class="compare-grid">
   <div class="compare-col col-left">
-    <div class="col-heading">Chat-driven AI tools</div>
+    <div class="col-heading">Typical chat-first workflow</div>
     <ul>
-      <li>Chat-driven: one prompt, one session</li>
+      <li>Usually organized around a prompt and session</li>
       <li>Context is the conversation window</li>
-      <li>Output: code, maybe tests</li>
-      <li>Audit: scrollback</li>
-      <li>One model, end-to-end</li>
+      <li>Primary output: code and tests</li>
+      <li>Process evidence often lives in chat history</li>
+      <li>One assistant commonly owns the whole change</li>
     </ul>
   </div>
   <div class="compare-col col-right">

@@ -3,39 +3,43 @@ layout: default
 transition: fade
 ---
 
-# 18 stages: PM → Principal → Build → Review → QA → Ship
+# The 18-stage full track: contract → build → verify → ship
 
 <div class="pipeline-wrap">
 
   <div class="pipe-row">
-    <div class="phase-tag">Plan &amp;<br>Build</div>
+    <div class="phase-tag">Contract</div>
     <div class="pipe-stages">
       <div class="stage s-std"><span class="ico">📋</span><b>Brief</b><span class="sn">01</span></div>
       <div class="sarr">→</div>
       <div class="stage s-std"><span class="ico">🏗</span><b>Design</b><span class="sn">02</span></div>
       <div class="sarr">→</div>
-      <div class="stage s-std"><span class="ico">📝</span><b>Spec</b><span class="sn">03a</span></div>
+      <div class="stage s-std"><span class="ico">❓</span><b>Clarify</b><span class="sn">03</span></div>
       <div class="sarr">→</div>
+      <div class="stage s-std"><span class="ico">📝</span><b>Exec Spec</b><span class="sn">03b</span></div>
+    </div>
+  </div>
+
+  <div class="pipe-bridge">
+    <div class="pb-space"></div>
+    <div class="pb-curve"></div>
+    <div class="pb-arrow">▼</div>
+  </div>
+
+  <div class="pipe-row">
+    <div class="phase-tag">Build &amp;<br>Review</div>
+    <div class="pipe-stages">
       <div class="stage s-std"><span class="ico">⚙️</span><b>Build ×4</b><span class="sn">04</span></div>
       <div class="sarr">→</div>
-      <div class="stage s-std"><span class="ico">✔</span><b>Lint+Test</b><span class="sn">04a</span></div>
-    </div>
-  </div>
-
-  <div class="pipe-bridge">
-    <div class="pb-space"></div>
-    <div class="pb-curve"></div>
-    <div class="pb-arrow">▼</div>
-  </div>
-
-  <div class="pipe-row">
-    <div class="phase-tag">Review</div>
-    <div class="pipe-stages">
+      <div class="stage s-std"><span class="ico">✔</span><b>Pre-review</b><span class="sn">04a</span></div>
+      <div class="sarr sarr-veto">→</div>
+      <div class="stage s-veto"><span class="ico">🔴</span><b>Security</b><span class="sn">04b</span></div>
+      <div class="sarr sarr-veto">→</div>
+      <div class="stage s-veto"><span class="ico">🔴</span><b>Red Team</b><span class="sn">04c</span></div>
+      <div class="sarr sarr-veto">→</div>
+      <div class="stage s-veto"><span class="ico">🔴</span><b>Migration</b><span class="sn">04d</span></div>
+      <div class="sarr">→</div>
       <div class="stage s-std"><span class="ico">🔍</span><b>Peer ×4</b><span class="sn">05</span></div>
-      <div class="sarr sarr-veto">→</div>
-      <div class="stage s-veto"><span class="ico">🔴</span><b>Security</b><span class="sn">05a</span></div>
-      <div class="sarr sarr-veto">→</div>
-      <div class="stage s-veto"><span class="ico">🔴</span><b>Migration</b><span class="sn">05b</span></div>
     </div>
   </div>
 
@@ -46,15 +50,17 @@ transition: fade
   </div>
 
   <div class="pipe-row">
-    <div class="phase-tag">QA &amp;<br>Ship</div>
+    <div class="phase-tag">Verify &amp;<br>Ship</div>
     <div class="pipe-stages">
       <div class="stage s-std"><span class="ico">✅</span><b>QA</b><span class="sn">06</span></div>
-      <div class="sarr sarr-veto">→</div>
-      <div class="stage s-veto"><span class="ico">🔴</span><b>Red Team</b><span class="sn">07</span></div>
       <div class="sarr">→</div>
-      <div class="stage s-std"><span class="ico">🚀</span><b>Deploy</b><span class="sn">08</span></div>
+      <div class="stage s-std"><span class="ico">🛡</span><b>Quality Gates</b><span class="sn">06b–06e</span></div>
       <div class="sarr sarr-green">→</div>
-      <div class="stage s-green"><span class="ico">🎉</span><b>Sign-off</b><span class="sn">09</span></div>
+      <div class="stage s-green"><span class="ico">✍️</span><b>Sign-off</b><span class="sn">07</span></div>
+      <div class="sarr sarr-green">→</div>
+      <div class="stage s-green"><span class="ico">🚀</span><b>Deploy</b><span class="sn">08</span></div>
+      <div class="sarr">→</div>
+      <div class="stage s-std"><span class="ico">🎭</span><b>Retro</b><span class="sn">09</span></div>
     </div>
   </div>
 
@@ -63,7 +69,7 @@ transition: fade
 <div class="legend-row">
   <span class="chip chip-purple">■ Standard stages</span>
   <span class="chip chip-veto">■ Veto power: peer-review cannot override</span>
-  <span class="chip chip-green">■ Auto-completes at 100% criterion coverage</span>
+  <span class="chip chip-green">■ Consequence boundary: explicit authority may be required</span>
 </div>
 
 <style>
@@ -189,9 +195,9 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; flex-shrink: 0; }
 <!--
 Walk row by row — 45 seconds.
 
-"Brief to design to build. Build fans out to four specialist workstreams: backend, frontend, platform, QA. Each writes its own gate. The orchestrator merges pessimistically: any FAIL gives merged FAIL."
+"The contract is explicit before implementation: brief, design, clarification, executable spec. Build then fans out to specialist workstreams."
 
-"The red nodes in the Review row have veto power. Security review, migration safety: peer-review consensus cannot override them. A migration without a tested rollback halts the pipeline."
+"Pre-review decides whether security and migration gates apply; the full track also runs red team before peer review. Veto findings cannot be averaged away by reviewer consensus."
 
-"Sign-off auto-closes when all acceptance criteria map 1:1 to passing tests. No manual approval needed."
+"After QA and the quality gates, sign-off comes before deploy. Consequence ceilings keep high-impact actions under explicit operator authority; retrospective closes the documentary loop."
 -->
