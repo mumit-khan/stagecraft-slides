@@ -19,7 +19,8 @@ transition: fade
 | Control moments + safety | 11–12 | 4 |
 | Evidence: comparative · strengths · audit | 13–15 | 5 |
 | Getting started + fit | 16–17 | 3 |
-| **Total** | | **~30** |
+| What's next | 18 | 2 |
+| **Total** | | **~32** |
 
 </div>
 
