@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-# Three human decision moments. The framework handles the loop.
+# Three human moments + consequence boundaries
 
 <div class="decisions">
   <div class="decision">
@@ -16,8 +16,8 @@ transition: slide-left
   <div class="decision">
     <div class="num">02</div>
     <div class="body">
-      <div class="title">At escalations</div>
-      <div class="desc">Pipeline halts and waits. Nothing moves without your call. Dispatch with <code>devteam ruling --topic "..."</code></div>
+      <div class="title">At escalations and consequence boundaries</div>
+      <div class="desc">Pipeline halts for judgment or missing authority. Rule with <code>devteam ruling</code>; approve consequential actions explicitly.</div>
     </div>
   </div>
   <div class="decision">
@@ -30,7 +30,7 @@ transition: slide-left
 </div>
 
 <div class="callout">
-  Between decision moments: the orchestrator dispatches, collects gates, auto-retries bounded code-defect failures, and advances. <strong>Human judgment stays concentrated at intent, escalations, and consequential actions.</strong>
+  Between these moments: the orchestrator dispatches, collects gates, auto-retries bounded code-defect failures, and advances. <strong>Additional checkpoints remain explicit when a track or policy requires them.</strong>
 </div>
 
 <style>
@@ -57,7 +57,7 @@ code { background: #E8E0F0; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Land on the callout — it's the key value proposition for tech leads.
 
-"You don't write boilerplate, shuffle files between agents, track who reviewed what, or compute aggregate status. You decide what to build, whether each gate is good enough, and what to do when the pipeline halts. That's it."
+"You don't write boilerplate, shuffle files between agents, track who reviewed what, or compute aggregate status. You decide what to build, whether each gate is good enough, and what to do when the pipeline halts or reaches an authority boundary."
 
 This is the answer to 'why not just prompt Claude yourself?'
 -->

@@ -3,7 +3,7 @@ layout: two-cols-header
 transition: slide-left
 ---
 
-# Same feature — radically different artifact trail
+# Same feature, radically different artifact trail
 
 ::left::
 

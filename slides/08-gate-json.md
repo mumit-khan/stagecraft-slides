@@ -5,13 +5,13 @@ transition: fade
 
 # Gate JSON: the shared contract between stages
 
-`devteam` renders the prompt. Your AI tool runs it. The model writes this back to disk.
+The model writes workstream gates. `devteam` validates and merges them into this stage gate.
 
 ```json {1-5|6-8|9-15|all}
 {
   "stage": "stage-04",
   "status": "PASS",
-  "orchestrator": "devteam@0.4.0",
+  "orchestrator": "devteam@0.8.0",
   "track": "full",
   "timestamp": "2026-06-18T14:32:11Z",
   "blockers": [],

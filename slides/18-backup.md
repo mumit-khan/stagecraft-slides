@@ -13,7 +13,7 @@ transition: fade
 | Section | Slides | Min |
 |---|---|---|
 | Hook + framing + problem | 1–3 | 3 |
-| Agenda + before/after | 4–5 | 2 |
+| Lineage + before/after | 4–5 | 2 |
 | Pipeline + tracks | 6–7 | 4 |
 | Mechanism: gate · artifacts · driver · routing | 8–11 | 7 |
 | Control moments + safety | 12–13 | 4 |

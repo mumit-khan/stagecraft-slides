@@ -3,17 +3,17 @@ layout: two-cols
 transition: fade
 ---
 
-# Right host per role. A small YAML routing block.
+# Route each role to the right host
 
 ```yaml {1-2|3-6|7-8|all}
 routing:
   default_host: claude-code
   roles:
-    backend:  codex        # fast + cheap for bulk generation
-    qa:       gemini-cli   # Gemini strong on adversarial tests
-    security: claude-code  # nuanced security reasoning
+    backend:  codex        # team-approved coding host
+    qa:       gemini-cli   # independent verification host
+    security: claude-code  # required security tool surface
   stages:
-    stage-08: claude-code  # deploy runbook is CC-specific
+    stage-08: claude-code  # stage-specific policy override
 pipeline:
   default_track: full
 ```
@@ -39,7 +39,7 @@ pipeline:
   </div>
   <div class="fact fact-cross">
     <div class="fact-title">Cross-model review</div>
-    <div class="fact-body">Codex builds. Claude reviews. The model that wrote the code never grades its own work: different host CLI, different context window, different blind spots.</div>
+    <div class="fact-body">Route build and review to different hosts when independent review matters. Different host CLI, different context window, different blind spots.</div>
   </div>
 </div>
 
@@ -59,8 +59,8 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 Walk the YAML click regions:
 
 Click 1 — default_host: "Any workstream not explicitly routed falls through to here."
-Click 2 — roles: "Claude for design and review. Codex for backend bulk generation. Gemini for adversarial QA."
-Click 3 — stage override: "Stage overrides beat role overrides. Deploy always runs on Claude Code because the runbook has CC-specific instructions. One line of config."
+Click 2 — roles: "These are policy choices, not universal model rankings. Teams can route by approved tools, availability, cost policy, or measured performance evidence."
+Click 3 — stage override: "Stage overrides beat role overrides. Here, deploy uses a host selected by stage policy; the runbook itself remains host-neutral. One line of config."
 
 Right column: "The core never invokes a model. Model-specific behavior stays inside the host adapter. The contract between hosts is structured JSON on disk."
 -->

@@ -2,7 +2,7 @@
 theme: default
 title: "Stagecraft"
 author: "Mumit Khan"
-date: "2026-06-21"
+date: "2026-06-22"
 confidentiality: "Public"
 language: "en"
 aspectRatio: "16/9"

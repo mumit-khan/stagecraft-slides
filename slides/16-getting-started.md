@@ -5,9 +5,10 @@ transition: fade
 
 # From clone to a bounded first run
 
-```bash {1-2|3-5|6-8|9-10|all}
+```bash {1-3|5-8|10-12|14-15|all}
 # 1. Install (one time, anywhere)
-git clone <repo> && npm install && npm link
+git clone <repo> && cd stagecraft
+npm install && npm link
 
 # 2. Initialize your project
 cd ~/your-project
@@ -36,7 +37,7 @@ devteam run --feature "Add SMS opt-in" \
 - `.claude/agents/*.md` (role briefs rendered for the host)
 - `.claude/skills/` (task-specific procedures)
 - `.devteam/rules/` (pipeline rules + per-stage docs)
-- `settings.local.json` (hooks: validator, secret-scan, approval-derivation)
+- `.claude/settings.local.json` (Stop, SubagentStop, PostToolUse, PreToolUse hooks)
 - `pipeline/gates/` (workspace for gate files)
 
 **Two-week pilot guide**

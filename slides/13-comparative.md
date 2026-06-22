@@ -34,11 +34,11 @@ transition: slide-left
       <td>✅ Per-agent harness + model</td>
     </tr>
     <tr>
-      <td>Copilot Workspace</td>
-      <td>Spec → plan → implement</td>
-      <td>❌ No gate enforcement</td>
-      <td>❌ Core ends at implementation</td>
-      <td>❌ GitHub Copilot only</td>
+      <td>AI-DLC</td>
+      <td>Adaptive delivery methodology</td>
+      <td>⚠ Evaluator + human approvals</td>
+      <td>✅ Construction + Operations</td>
+      <td>⚠ Rules for multiple coding agents</td>
     </tr>
     <tr>
       <td>BMAD</td>
@@ -51,12 +51,12 @@ transition: slide-left
       <td>GitHub Spec Kit</td>
       <td>Spec → plan → tasks → implement</td>
       <td>⚠ Checklists + extensions</td>
-      <td>❌ Core ends at implement</td>
+      <td>⚠ Core ends at implement; extensions can add gates</td>
       <td>⚠ 30 integrations</td>
     </tr>
     <tr>
       <td>Kiro</td>
-      <td>Integrated IDE + cloud</td>
+      <td>Integrated IDE + CLI + web</td>
       <td>⚠ Hooks + agent workflow</td>
       <td>⚠ Agent/hook dependent</td>
       <td>❌ Native Kiro surfaces only</td>
@@ -66,7 +66,7 @@ transition: slide-left
 </div>
 
 <div class="closest"><strong>Closest overlap:</strong> multi-host execution and policy enforcement. <strong>Boundary:</strong> Omnigent governs agent sessions; Stagecraft governs an ordered SDLC and its evidence.</div>
-<div class="sources">Omnigent sources: <a href="https://github.com/omnigent-ai/omnigent">README</a> · <a href="https://github.com/omnigent-ai/omnigent/blob/main/docs/POLICIES.md">Policies</a> · reviewed 2026-06-21</div>
+<div class="sources">Source map: Stagecraft <code>docs/comparative-analysis.md</code> · first-party comparator docs reviewed 2026-06-22</div>
 
 <style>
 .slidev-layout { padding: 25px 50px 45px 50px; }
@@ -95,10 +95,10 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 
 "Concrete differences:
 - vs Omnigent: this is the closest overlap. Omnigent is a broad agent runtime and collaboration control plane: multiple harnesses, cross-vendor review, action policies, OS sandboxes, cloud hosts, and shared sessions. Stagecraft is narrower and more opinionated: its source of truth is the ordered SDLC, schema-validated gates, delivery artifacts, and tamper-evident evidence chain. An Omnigent adapter could make the products complementary.
-- vs Copilot Workspace: Workspace takes a task and generates a plan + implementation. Ends there. No review, no red team, no deploy — and gates are a checklist you tick, not a validator that blocks.
-- vs Spec Kit: Spec Kit ends at implementation. Stagecraft runs review, red team, QA, deploy.
+- vs AI-DLC: the closest methodological comparator. AI-DLC is broader as an organization-oriented methodology and evaluator; Stagecraft is more executable as a local delivery control plane.
+- vs Spec Kit: its core process ends at implementation, while current extensions and workflows can add governance and gates. Stagecraft makes post-build controls part of the core contract.
 - vs BMAD: BMAD is stronger at conversational product shaping. Stagecraft wins on deterministic execution — you can't argue your way past a gate validator.
-- vs Kiro: Kiro is an integrated IDE environment. Stagecraft can compose with Kiro as a host."
+- vs Kiro: Kiro spans IDE, CLI, and web. Stagecraft can compose with it as a host rather than imitate the integrated environment."
 
 "The highlighted row is us. Stagecraft's row is verifiable against the codebase. Revalidate competitor rows against current vendor documentation before presenting externally."
 -->
