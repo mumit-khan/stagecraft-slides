@@ -5,7 +5,7 @@ transition: fade
 
 <style>
 .slidev-layout.two-columns {
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 55%;
 }
 </style>
 
