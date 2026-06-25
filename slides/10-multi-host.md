@@ -9,11 +9,11 @@ transition: fade
 routing:
   default_host: claude-code
   roles:
-    backend:  codex        # team-approved coding host
-    qa:       gemini-cli   # independent verification host
-    security: claude-code  # required security tool surface
+    backend:  openai-compat  # Kimi K2 / GLM via OpenRouter. Experimental.
+    qa:       gemini-cli     # independent verification host
+    security: claude-code    # required security tool surface
   stages:
-    stage-08: claude-code  # stage-specific policy override
+    stage-08: claude-code    # stage-specific policy override
 pipeline:
   default_track: full
 ```
@@ -31,11 +31,11 @@ pipeline:
   </div>
   <div class="fact">
     <div class="fact-title">Adding a new host</div>
-    <div class="fact-body">One directory under <code>hosts/</code>, implementing the small host-adapter contract.</div>
+    <div class="fact-body">One directory under <code>hosts/</code>, implementing the host-adapter contract. <code>openai-compat</code> — an experimental HTTP-native adapter with no CLI dependency — was built this way.</div>
   </div>
   <div class="fact">
     <div class="fact-title">Works today</div>
-    <div class="fact-body">Claude Code · Codex · Gemini CLI · generic (no host, prompts for manual use)</div>
+    <div class="fact-body">Claude Code · Codex · Gemini CLI · openai-compat (Experimental: OpenRouter → GLM, Kimi, DeepSeek, …) · generic (manual)</div>
   </div>
   <div class="fact fact-cross">
     <div class="fact-title">Cross-model review</div>
@@ -59,7 +59,7 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 Walk the YAML click regions:
 
 Click 1 — default_host: "Any workstream not explicitly routed falls through to here."
-Click 2 — roles: "These are policy choices, not universal model rankings. Teams can route by approved tools, availability, cost policy, or measured performance evidence."
+Click 2 — roles: "These are policy choices, not universal model rankings. Teams can route by approved tools, availability, cost policy, or measured performance evidence. openai-compat opens the full OpenRouter catalogue — Kimi K2, GLM, DeepSeek — without needing a dedicated CLI. Set base_url, api_key_env, and a per-role model table in config.yml and you're done."
 Click 3 — stage override: "Stage overrides beat role overrides. Here, deploy uses a host selected by stage policy; the runbook itself remains host-neutral. One line of config."
 
 Right column: "The core never invokes a model. Model-specific behavior stays inside the host adapter. The contract between hosts is structured JSON on disk."
