@@ -3,6 +3,12 @@ layout: two-cols
 transition: fade
 ---
 
+<style>
+.slidev-layout.two-columns {
+  grid-template-columns: 50% 50%;
+}
+</style>
+
 # Route each role to the right host
 
 ```yaml {1-2|3-6|7-8|all}
@@ -27,7 +33,7 @@ pipeline:
   </div>
   <div class="fact">
     <div class="fact-title">Models connect through gate JSON</div>
-    <div class="fact-body">Models never share a context window. Model A reads the prior gate file on disk. That's it. That's why multi-host works.</div>
+    <div class="fact-body">Models never share a context window, each model reads the prior gate file on disk. That's it. That's why multi-host works.</div>
   </div>
   <div class="fact">
     <div class="fact-title">Adding a new host</div>
@@ -35,7 +41,7 @@ pipeline:
   </div>
   <div class="fact">
     <div class="fact-title">Works today</div>
-    <div class="fact-body">Claude Code · Codex · Gemini CLI · openai-compat (Experimental: OpenRouter → GLM, Kimi, DeepSeek, …) · generic (manual)</div>
+    <div class="fact-body">Claude Code · Codex · Gemini CLI · openai-compat (<u>experimental</u>: OpenRouter → GLM, Kimi, DeepSeek, …) · generic (manual)</div>
   </div>
   <div class="fact fact-cross">
     <div class="fact-title">Cross-model review</div>
