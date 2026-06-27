@@ -41,7 +41,7 @@ pipeline:
   </div>
   <div class="fact">
     <div class="fact-title">Works today</div>
-    <div class="fact-body">Claude Code · Codex · Gemini CLI · openai-compat (<u>experimental</u>: OpenRouter → GLM, Kimi, DeepSeek, …) · generic (manual)</div>
+    <div class="fact-body">Claude Code · Codex · Gemini CLI · openai-compat (<u>experimental</u>: Fuel iX, OpenRouter, Fireworks AI, DS4, GLM, Kimi, …) · generic (manual)</div>
   </div>
   <div class="fact fact-cross">
     <div class="fact-title">Cross-model review</div>
