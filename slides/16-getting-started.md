@@ -40,6 +40,8 @@ devteam run --feature "Add SMS opt-in" \
 - `.claude/settings.local.json` (Stop, SubagentStop, PostToolUse, PreToolUse hooks)
 - `pipeline/gates/` (workspace for gate files)
 
+Also works with `--host codex`, `gemini-cli`, `omnigent`, `openai-compat`, or `generic`.
+
 **Two-week pilot guide**
 
 `docs/adoption-guide.md`: success criteria, honest bad-fit signals. Know within two weeks.
@@ -65,7 +67,7 @@ code { background: #F4F4F7; padding: 0.1em 0.3em; border-radius: 3px; font-size:
 <!--
 Walk the four code steps — 60 seconds.
 
-"Install the CLI, initialize the target project, then let doctor verify the adapter, rules, hooks where supported, host CLI, and gate workspace."
+"Install the CLI, initialize the target project, then let doctor verify the adapter, rules, hooks where supported, host CLI or runtime, and gate workspace."
 
 "Headless mode pipes the prompt directly to the host CLI and waits for the gate file. No copy-paste, no switching windows."
 

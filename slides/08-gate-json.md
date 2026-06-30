@@ -11,7 +11,7 @@ The model writes workstream gates. `devteam` validates and merges them into this
 {
   "stage": "stage-04",
   "status": "PASS",
-  "orchestrator": "devteam@0.8.0",
+  "orchestrator": "devteam@0.9.0",
   "track": "full",
   "timestamp": "2026-06-18T14:32:11Z",
   "blockers": [],

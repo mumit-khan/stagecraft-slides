@@ -41,8 +41,8 @@ transition: slide-left
 </div>
 
 <div class="roadmap-card orange">
-  <div class="rcard-title">Omnigent host adapter</div>
-  <div class="rcard-body">Evaluate Omnigent as an execution runtime for harness choice, sandboxing, cloud workers, and collaboration—while Stagecraft retains stage progression, validation, and evidence ownership.</div>
+  <div class="rcard-title">Omnigent runtime hardening</div>
+  <div class="rcard-body">Adapter landed; follow-through is real-runtime smoke testing, flag verification, and an explicit director-mode prototype only after one-workstream execution is solid.</div>
 </div>
 
 </div>
@@ -50,7 +50,7 @@ transition: slide-left
 </div>
 
 <div class="posture-bar">
-  <strong>Roadmap posture:</strong> Stagecraft stays the delivery and evidence plane; execution runtimes such as Omnigent can sit beneath it.
+  <strong>Roadmap posture:</strong> Stagecraft stays the delivery and evidence plane; Omnigent can be the runtime/session plane beneath it.
 </div>
 
 <style>
@@ -94,5 +94,5 @@ Near-horizon:
 Evidence-gated extensions:
 - Recipe factory: accepted resolutions become reusable only after recurrence and derivability thresholds are satisfied.
 - Conversational upstream: useful only if pilots show requirements need dialogue before the gate is written.
-- Omnigent adapter: investigate integration before duplicating its session, sandbox, cloud-host, and collaboration infrastructure. Stagecraft must remain the sole owner of routing authority, gate validation, and pipeline state.
+- Omnigent runtime: the adapter path now exists. Next is runtime validation, then a guarded director-mode prototype that must still write every expected workstream gate.
 -->

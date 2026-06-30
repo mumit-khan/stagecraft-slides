@@ -136,7 +136,7 @@ h1 { color: #4B286D; font-size: 3em; }
 Q&A primers — have these ready:
 
 Q: How does this compare to LangGraph / CrewAI / AutoGen?
-A: Different problem. Those are Python libraries for coordinating LLM calls in your code. Stagecraft is a pipeline scaffold for AI *coding* tools — the model invocation happens inside Claude / Codex / Gemini, not via a framework SDK.
+A: Different problem. Those are Python libraries for coordinating LLM calls in your code. Stagecraft is a pipeline scaffold for AI *coding* tools and runtimes — the model invocation happens inside Claude / Codex / Gemini / Omnigent / openai-compat, not in the core orchestrator.
 
 Q: What if the LLM doesn't follow the rules?
 A: Hook-enforceable rules (allowedWrites, secret scanning) are enforced at tool-call time via Claude Code PreToolUse hooks. The gate validator catches the rest post-hoc. A FAIL gate halts the pipeline — there's no silently moving forward.
@@ -145,7 +145,7 @@ Q: Cost — adversarial review sounds expensive.
 A: Default config is one host per pipeline. Fanout is opt-in. Route bulk work to cheaper models (Codex for backend), reserve expensive ones for Principal/Security.
 
 Q: Can I add Cursor / Aider / Cline / Windsurf?
-A: Yes. ~200 lines — implement 5 methods against the host-adapter contract. CONTRIBUTING.md has the recipe.
+A: Yes. Implement a host adapter against the contract. Omnigent and openai-compat are recent examples: one runtime-backed, one HTTP-native.
 
 Q: Is "reproducible LLM run" actually a thing?
 A: Partially. Gates record model_version, temperature, seed, system_prompt_hash — enough for audit, not bit-for-bit reproduction. The docs are explicit about the limit.

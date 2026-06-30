@@ -22,7 +22,7 @@ transition: slide-left
   <div class="fit-col">
     <div class="fit-heading fit-bad">Bad fit: save your time ❌</div>
     <ul>
-      <li>Purely exploratory or prototype work</li>
+      <li>Pure exploration: use prototype mode first, then promote</li>
       <li>AI for autocomplete / tab-completion only</li>
       <li>Solo projects with no review ceremony</li>
       <li>Teams not ready for gate discipline</li>

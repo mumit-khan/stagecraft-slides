@@ -65,7 +65,7 @@ transition: slide-left
 </table>
 </div>
 
-<div class="closest"><strong>Closest overlap:</strong> multi-host execution and policy enforcement. <strong>Boundary:</strong> Omnigent governs agent sessions; Stagecraft governs an ordered SDLC and its evidence.</div>
+<div class="closest"><strong>Closest overlap:</strong> multi-host execution and policy enforcement. <strong>Current integration:</strong> Stagecraft can route a workstream through Omnigent while preserving gate validation, write audit, and evidence ownership.</div>
 <div class="sources">Source map: Stagecraft <code>docs/comparative-analysis.md</code> · first-party comparator docs reviewed 2026-06-22</div>
 
 <style>
@@ -94,7 +94,7 @@ h1 { color: #4B286D; margin-bottom: 0.5em; font-size: 1.3em; }
 "Stagecraft's distinctive combination is mechanical gate enforcement, heterogeneous host routing, and post-build depth through deploy and retro."
 
 "Concrete differences:
-- vs Omnigent: this is the closest overlap. Omnigent is a broad agent runtime and collaboration control plane: multiple harnesses, cross-vendor review, action policies, OS sandboxes, cloud hosts, and shared sessions. Stagecraft is narrower and more opinionated: its source of truth is the ordered SDLC, schema-validated gates, delivery artifacts, and tamper-evident evidence chain. An Omnigent adapter could make the products complementary.
+- vs Omnigent: this is the closest overlap. Omnigent is a broad agent runtime and collaboration control plane: multiple harnesses, cross-vendor review, action policies, OS sandboxes, cloud hosts, and shared sessions. Stagecraft is narrower and more opinionated: its source of truth is the ordered SDLC, schema-validated gates, delivery artifacts, and tamper-evident evidence chain. The new adapter makes them complementary: Omnigent can execute the workstream; Stagecraft keeps the delivery contract.
 - vs AI-DLC: the closest methodological comparator. AI-DLC is broader as an organization-oriented methodology and evaluator; Stagecraft is more executable as a local delivery control plane.
 - vs Spec Kit: its core process ends at implementation, while current extensions and workflows can add governance and gates. Stagecraft makes post-build controls part of the core contract.
 - vs BMAD: BMAD is stronger at conversational product shaping. Stagecraft wins on deterministic execution — you can't argue your way past a gate validator.

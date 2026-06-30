@@ -32,7 +32,7 @@ transition: fade
 | vs LangGraph / CrewAI? | Different layer — they wire LLM API calls; Stagecraft orchestrates AI *coding* tools |
 | Cost? | One host by default. Fanout and multi-host are opt-in. |
 | LLM ignores rules? | PreToolUse hooks block at write time. Gate validator catches the rest. FAIL = halt. |
-| vs Omnigent? | Omnigent is the runtime/session plane; Stagecraft is the ordered delivery/evidence plane. An adapter could combine both. |
+| vs Omnigent? | Omnigent is the runtime/session plane; Stagecraft is the ordered delivery/evidence plane. The adapter combines them without moving gate authority. |
 | Reproducible run? | Partially. Optional host metadata plus gate, prompt, and artifact hashes improve replay and auditability. |
 | Share results? | `devteam report` — self-contained HTML, no service required. |
 

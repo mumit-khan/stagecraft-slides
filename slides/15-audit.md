@@ -24,7 +24,7 @@ transition: fade
     <div class="sub-label">change tracks</div>
   </div>
   <div class="sub-stat">
-    <div class="sub-num">4</div>
+    <div class="sub-num">6</div>
     <div class="sub-label">first-party host adapters</div>
   </div>
 </div>

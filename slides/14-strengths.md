@@ -17,7 +17,7 @@ transition: slide-left
   <div class="num">02</div>
   <div class="body">
     <div class="title">Runtime-independent delivery contract</div>
-    <div class="desc">Host adapters keep the ordered stages and gate semantics independent from the executor. Multi-host fanout is useful; the durable process contract is the differentiation.</div>
+    <div class="desc">Host adapters keep ordered stages and gate semantics independent from the executor. Omnigent can run beneath Stagecraft without becoming the pipeline authority.</div>
   </div>
 </div>
 
